@@ -717,6 +717,10 @@ div.team-gallery img {
 	line-height: 26px;
 }
 
+.orange-text {
+	color: #FAAE58;
+}
+
 .big-team-pic {
 	border-radius: 48px;
 	align-content: center;
