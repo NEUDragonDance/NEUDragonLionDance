@@ -452,7 +452,7 @@ p {
 }
 
 .credits {
-	font-size: calc(10px + 0.390625vw);
+	font-size: calc(8px + 0.390625vw);
 	color: lightgray;
 	padding-top: 7px;
 	padding-bottom: 7px;
