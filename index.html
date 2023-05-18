@@ -11,7 +11,7 @@
 		  gtag('config', 'G-Q23H8B6E32');
 		</script>
 		<title>Northeastern University Dragon &#38; Lion Dance Troupe - Home</title>
-		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="shortcut icon" href="/IconsLogos/favicon.ico">
 		<!-- Link to CSS file -->
 		<link rel="stylesheet" type="text/css" href="DragonDanceWebsiteStyles.css"/>
 		<!-- Link to javascript file -->
@@ -49,8 +49,9 @@
 				<a href="index.html">
 				<div class="logo-top-left">
 					<div class="small-logo">
-					<img src="Dragon Dance Logo with Drop Shadow.png" width="150" height="150" alt="Logo of the Northeastern University Dragon and Lion Dance Troupe"/>
+					<img src="/IconsLogos/Dragon Dance Logo with Drop Shadow.png" width="150" height="150" alt="Logo of the Northeastern University Dragon and Lion Dance Troupe"/>
 					</div>
+					</a>
 
 					<div class="logo-top-left-text">
 						<h3 class="neu-logo-text">NORTHEASTERN UNIVERSITY</h3>
@@ -59,7 +60,6 @@
 					</div>
 
 				</div>
-				</a>
 
 				<!-- Horizontal navigation bar (for wide screens) -->
 				<div class="topnav">
@@ -68,7 +68,7 @@
 					<a href="JoinUs.html">Our Team</a>
 					<a href="Gallery.html">Gallery</a>
 					<a href="#about-us-header">About</a>
-					<a href="index.html">Home</a>
+					<a href="index.html" style="color:#FAAE58">Home</a>
 					<span onclick="openNav()">
 						<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 							<i class="fa fa-bars"></i>
@@ -83,11 +83,11 @@
 
 					<!-- Overlay content -->
 					<div class="overlay-content">
-						<a href="index.html">Home</a>
+						<a href="index.html" style="color:#FAAE58">Home</a>
 						<a href="#about-us-header">About</a>
 						<a href="Gallery.html">Gallery</a>
 						<a href="JoinUs.html">Our Team</a>
-						<a href="JoinUs.html">Join Us</a>
+						<a href="https://neudragonliondance.org/JoinUs.html#join-us-header">Join Us</a>
 						<a href="#book-a-show-header">Get in Touch</a>
 					</div>
 				</div>
@@ -96,7 +96,11 @@
 			<!-- TOP SECTION -------------------------------------------------------------- -->
 			<div class="top-section" id="top-section">
 				<div class="main-pic">
-					<img src="NEU Dragon Dance Performance.jpeg" width="100%" alt="A picture of a dragon dance performance by Northeastern University Dragon and Lion Dance Troupe in the pose known as bow"/>
+					<picture>
+						<source srcset="NEU Dragon Dance Performance.webp" type="image/webp" width="100%" alt="A picture of a dragon dance performance by Northeastern University Dragon and Lion Dance Troupe">
+
+						<img src="NEU Dragon Dance Performance.jpeg" width="100%" alt="A picture of a dragon dance performance by Northeastern University Dragon and Lion Dance Troupe"/>
+					</picture>
 				</div>
 
 				<!-- Used for spacing purposes (underneath other visual elements)-->
@@ -126,16 +130,19 @@
 			<div class="main-section">
 				<div class="center">
 					<a href="#about-us-header">
-						<img class="arrow" id="arrow" src="White Downward Arrow.png" width="115px" alt="A white down arrow."/>
+						<img class="arrow" id="arrow" src="/IconsLogos/White Downward Arrow.png" width="115px" alt="white down arrow"/>
 					</a>
 				</div>
 				<!-- HEADER: ABOUT US -->
 				<h2 class="header" id="about-us-header">About Us</h2>
 				<div class="flex-container" id="about-us-section">
 					<div class="about-us-pics flex-child">
-						<img class="about-us-pic" src="Team Line.jpg" width="90%" alt="A picture of Northeastern Dragon Dance lined up in front of the Boston skyline"/>
+						<br>
+						<br>
+						<img class="about-us-pic" src="zipzopzip.jpg" width="80%" alt="A picture of Northeastern Dragon Dance in a circle pose"/>
 
-						<img class="about-us-pic" src="NEU Dragon Dance in Circle Ending Pose.jpg" width="90%" alt="A picture of Northeastern Dragon Dance in a circle ending pose"/>
+						<img class="about-us-pic" src="/GalleryPics/2022-3/Intercollegiates-pink-lion.JPG" width="80%" alt="Chinese Lion Dance performance by Northeastern University Dragon and Lion Dance Troupe"/>
+
 					</div>
 					<div class="about-us-text flex-child">
 						<p>We are a group of driven college students who seek to spread Chinese culture through artful and unique performances of Chinese Dragon Dance and Lion Dance.
@@ -144,10 +151,16 @@
 						The Northeastern University Dragon and Lion Dance Troupe was founded in 2015 with the goal is to spread Chinese culture through Dragon Dance performances, as well as give those interested the opportunity to learn, practice, and be apart of these performances whether that be on the dragon, the pearl, or with the instrumentalists. We also began practicing and performing Lion Dance in the Spring of 2021.
 						<br>
 						<br>
-						Since then, we have grown to perform all over the Boston area, such as at Northeastern University’s many culture shows, at neighboring colleges and universities, and even performing the opener for the 2022 Intercollegiate Lion Dance Conference in Amherst, MA.</p>
-						<p class="orange-text"><i>Special thanks to 
-							<a class="orange-text" target="_blank" rel="noreferrer noopener" href="https://www.yelp.com/biz/teriyaki-house-boston?utm_campaign=www_business_share_popup&utm_medium=copy_link&utm_source=(direct)">Teriyaki House</a>
-							and the Ng family for sponsoring us!<br>Check out their restaurant at 32 W Broadway, Boston MA.</i></p>
+						Since then, we have grown to perform all over the Boston area, such as at Northeastern University’s many culture shows, at neighboring colleges and universities, and even performing the opener for the 2022 Asian American Festival at Boston Common.</p>
+						<p class="orange-text">
+							<i>Thank you to 
+							<a class="orange-text white-hover" target="_blank" rel="noreferrer noopener" href="https://www.yelp.com/biz/teriyaki-house-boston?utm_campaign=www_business_share_popup&utm_medium=copy_link&utm_source=(direct)">Teriyaki House</a>
+							for sponsoring us!
+							<br>
+							Check out their restaurant at 32 W Broadway, Boston MA.
+							<br>
+							And special thanks to the Ng family for their support!
+							</i></p>
 						<br>
 						<a href="JoinUs.html">
 							<button type="button" class="button-style">Our Team</button>
@@ -158,8 +171,8 @@
 
 				<!-- HEADER: BOOK A SHOW -->
 				<div class="book-a-show-section">
-					<h2 class="header" id="book-a-show-header">Book a Show</h2>
-					<p class="book-a-show-text">If you are looking to book a show, please email us with the date and location of the performance. We will reach out to you with our availability, performance details, and logistics. We are also open to other inquiries!
+					<h2 class="header" id="book-a-show-header">Book a Performance</h2>
+					<p class="book-a-show-text">If you are looking to book a performance, please email us with the <strong class="orange">date and location</strong> of the desired performance and <strong class="orange">if you would like dragon dance and/or lion dance.</strong> We will reach out to you with our availability, performance details, and logistics. We are also open to other inquiries!
 					<br>
 					<br>
 					Please don't hesitate to reach out if you have any additional questions or concerns!</p>
@@ -173,12 +186,13 @@
 						<br>
 						<br>
 						<br>
+						<br>
 					</div>
 
 					<!-- GOOGLE CALENDAR  ------------------------------------------------- -->
 				<h1>Our Calendar</h1>
 				<div class="calendar">
-					<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23faae58&ctz=America%2FNew_York&showTitle=1&showCalendars=1&src=NGlrNWZ1MTNhYmdjazhiaDM4bHZlbzRobGNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23009688" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+					<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23faae58&ctz=America%2FNew_York&showTitle=1&showCalendars=1&src=NGlrNWZ1MTNhYmdjazhiaDM4bHZlbzRobGNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23009688" style="border-width:0px" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 					<br>
 					<br>
 				</div>
@@ -186,14 +200,15 @@
 				<div style="margin:-110px;"></div>
 
 				<div class="book-a-show-section">
-					<a href="Gallery.html" class="link-color">
-						<h1>Past Performances</h1>
-					</a>
+						<h1>
+							<a target="_blank" rel="noreferrer noopener" href="Gallery.html" class="link-color">Recent Performances</a>
+							</h1>
+
 					<div class="more-space-on-sides">
 							<div class="responsive">
 							  <div class="gallery">
-							    <a target="_blank" rel="noreferrer noopener" href="/GalleryPics/2022-3/Wellesley.jpg">
-							      <img src="/GalleryPics/2022-3/Wellesley.jpg" alt="Dragon Dance Performances at Wellesley Wushu Spring Showcase" width="600" height="400" class="pic">
+							    <a target="_blank" rel="noreferrer noopener" href="https://youtu.be/Ls8XlOKpW4M">
+							      <img src="/GalleryPics/2022-3/Wellesley2.png" alt="Dragon Dance Performances at Wellesley Wushu Spring Showcase" width="600" height="400" class="pic">
 							    </a>
 							    <div class="desc">Dragon Dance Performances at Wellesley Wushu Spring Showcase</div>
 							  </div>
@@ -202,7 +217,7 @@
 							<div class="responsive">
 								<div class="gallery">
 								  <a target="_blank" rel="noreferrer noopener" href="https://www.youtube.com/watch?v=KnVDelBY9C8">
-									<img src="/GalleryPics/2022-3/Intercollegiates.jpg" alt="Lion and Dragon Dance Performances for the 2023 Intercollegiate Lion Dance Competition" width="600" height="400" class="pic">
+									<img src="/GalleryPics/2022-3/Intercollegiates-pink-lion.JPG" alt="Lion and Dragon Dance Performances for the 2023 Intercollegiate Lion Dance Competition" width="600" height="400" class="pic">
 								  </a>
 								  <div class="desc">Lion and Dragon Dance Performances for the 2023 Intercollegiate Lion Dance Competition</div>
 								</div>
@@ -224,7 +239,7 @@
 							<div class="book-a-show-section">
 								<div class="get-in-touch">
 									<a target="_blank" rel="noreferrer noopener" href="Gallery.html" class="center icon-link-color">
-										<button type="button" class="button-style-long" style="display:block; margin: 0 auto;">View Our Gallery</button>
+										<button type="button" class="button-style-long" target="_blank" rel="noreferrer noopener" href="Gallery.html" style="display:block; margin: 0 auto;">View Our Gallery</button>
 									</a>
 									<br>
 
@@ -243,7 +258,7 @@
 				<div class="bottom-section">
 					<div class="flex-container-2">
 						<div class="join-our-team-section flex-child">
-							<a href="JoinUs.html" class="link-color"><h3 class="italic-header">JOIN OUR TEAM!</h3></a>
+							<a href="https://neudragonliondance.org/JoinUs.html#join-us-header" class="link-color"><h3 class="italic-header">JOIN OUR TEAM!</h3></a>
 							<p class="bottom-section-text">Members of the Northeastern University community are welcome to join! No experience necessary!</p>
 						</div>
 
@@ -251,33 +266,35 @@
 							<div class="icon-div">
 								<!-- Instagram Icon -->
 								<a target="_blank" rel="noreferrer" class="icon icon-link-color" href="https://www.instagram.com/neudragonliondance/">
-									<img src="instagram-icon.png" width="60px" alt="Instagram Icon">
+									<img src="/IconsLogos/instagram-icon.png" width="60px" alt="Instagram Icon">
 								</a>
 
 								<!-- Facebook Icon -->
 								<a target="_blank" rel="noreferrer" class="icon icon-link-color" href="https://www.facebook.com/NEUDragonLionDance">
-									<img src="facebook-icon.png" width="63px" alt="Facebook Icon">
+									<img src="/IconsLogos/facebook-icon.png" width="63px" alt="Facebook Icon">
 								</a>
 
-								<!-- Youtube Icon -->
-								<a target="_blank" rel="noreferrer" class="icon icon-link-color" href="https://youtube.com/playlist?list=PLCirEzWfR6Ryv-6D4zrGxIX1anH8TbbJo">
-									<img src="youtube-icon.png" width="66px" alt="Youtube Icon">
+								<!-- YouTube Icon -->
+								<a target="_blank" rel="noreferrer" class="icon icon-link-color" href="https://www.youtube.com/@neudragonliondance">
+									<img src="/IconsLogos/youtube-icon.png" width="66px" alt="Youtube Icon">
 								</a>
 
 								<!-- Email Icon -->
 								<a target="_blank" rel="noreferrer" class="icon icon-link-color" href="mailto: neu.dragondance@gmail.com">
-									<img src="mail-icon.png" width="66px" alt="Email Icon">
+									<img src="/IconsLogos/mail-icon.png" width="66px" alt="Email Icon">
 								</a>
 
 							</div>
 							<div class="email">
-								<a target="_blank" rel="noreferrer noopener" class="link-color" href="mailto: neu.dragondance@gmail.com"><p class="hover-orange">neu.dragondance@gmail.com</p></a>
+								<p class="hover-orange">
+								<a target="_blank" rel="noreferrer noopener" class="link-color" href="mailto: neu.dragondance@gmail.com">
+								neu.dragondance@gmail.com</p></a>
 							</div>
 						</div>
 					</div>
 
 					<div class="bottom-credits-section">
-						<p class="credits">NEU Dragon &#38; Lion Dance Ⓒ 2022 | Hosted on GitHub | Created by <a target="_blank" rel="noreferrer" class="serena-ng" href="https://www.serenang.com/">Serena Ng</a></p>
+						<p class="credits">Ⓒ NEU Dragon &#38; Lion Dance 2023 | Hosted on <a target="_blank" rel="noreferrer" class="serena-ng" href="https://github.com/serena-boyu/NEUDragonDance">GitHub</a> | Created by <a target="_blank" rel="noreferrer" class="serena-ng" href="https://www.serenang.com/">Serena Ng</a></p>
 					</div>
 				</div>
 		
