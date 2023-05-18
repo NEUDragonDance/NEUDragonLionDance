@@ -118,6 +118,8 @@ body {
   font-size: 20px;
   font-family: Raleway, Helvetica, Ariel;
   font-weight: bold;
+  transition: color 0.3s ease;
+
 }
 
 /* Change the color of links on hover */
@@ -370,6 +372,7 @@ h2 {
 .header {
 	text-align: center;
 	padding-top: 80px;
+	margin-bottom: -1px;
 	font-size: calc(50px + 0.390625vw);
 }
 
@@ -387,15 +390,16 @@ p {
 .about-us-text {
 	padding: 20px 5%;
 	line-height: 27px;
+	padding-left: 20px;
 }
 
 .about-us-pic {
 	align-content: center;
 	display: flex;
-	width: 80%;
+	width: 85%;
 	margin: auto;
 	padding: 10px 10px;
-	border-radius: 35px;
+	border-radius: 24px;
 }
 
 .flex-child {
@@ -412,21 +416,24 @@ p {
 }
 
 .button-style {
-	border-color: white;
-	border-width: 4px;
-	border-radius: 50px;
+	border: 4px solid white;
+	border-radius: 10px;
 	color: white;
-	background-color: #BE1E2E;
+	background-color: #BE1E2E; /* Red */
 	width: 270px;
 	height: 60px;
 	font-size: 20pt;
 	font-weight: 550;
 	font-family: Raleway, Helvetica, Ariel;
+	border-shadow: none;
+	transition: background-color 0.3s ease;
 }
 
 .button-style:hover {
-	background-color: white;
-	color: #BE1E2E;
+	background-color: #F9AE59; /* Orange */
+	color: #BE1E2E; /* Red */
+	border: 4px solid #F9AE59; /* Orange */
+	cursor: pointer;
 }
 
 .book-a-show-section {
@@ -481,6 +488,7 @@ p {
 	font-style: italic;
 	margin-bottom: -2px;
 	line-height: 35px;
+	transition: color 0.3s ease;
 }
 
 .italic-header:hover {
@@ -518,6 +526,7 @@ a:visited {
 
 .serena-ng {
 	color: lightgray;
+	transition: color 0.3s ease;
 }
 
 .serena-ng:hover {
@@ -525,7 +534,13 @@ a:visited {
 }
 
 .link-color {
-	color: hsla(0, 0%, 0%, 0);
+	color: white;
+	transition: color 0.3s ease;
+
+}
+
+link-color:visited {
+	text-decoration: none;
 }
 
 .icon-link-color {
@@ -562,21 +577,23 @@ a:visited {
 }
 
 .button-style-long {
-	border-color: white;
-	border-width: 4px;
-	border-radius: 50px;
+	border: 4px solid white;
+	border-radius: 10px;
 	color: white;
 	background-color: #BE1E2E;
-	width: 420px;
+	width: 335px;
 	height: 60px;
 	font-size: 20pt;
 	font-weight: 550;
 	font-family: Raleway, Helvetica, Ariel;
+	transition: background-color 0.3s ease;
 }
 
 .button-style-long:hover {
-	background-color: white;
-	color: #BE1E2E;
+	background-color: #F9AE59; /* Orange */
+	color: #BE1E2E; /* Red */
+	border: 4px solid #F9AE59; /* Orange */
+	cursor: pointer;
 }
 
 .gallery-text {
@@ -598,9 +615,11 @@ div.gallery {
   padding: 20px;
 }
 
+/*
 div.gallery:hover {
   border: 5px solid hsla(0, 0%, 0%, 0);;
 }
+*/
 
 div.gallery img {
   width: 100%;
@@ -613,6 +632,8 @@ div.desc {
   color: white;
   font-family: Khula, Helvetica, Ariel;
   font-size: 13pt;
+  font-weight: bold;
+  line-height: 25px;
 }
 
 * {
@@ -645,10 +666,18 @@ div.desc {
 }
 
 .pic {
-	border-radius: 24px;
+	border-radius: 15px;
 	object-fit: cover;
 	width: 375px;
 	height: 260px;
+	padding-bottom: 6px;
+	transition: border 0.3s ease;
+}
+
+.pic:hover {
+	filter: blur(2px); /* Apply the blur effect on hover */
+	border: 5px solid hsla(0, 0%, 0%, 0);
+	padding-bottom: 3px;
 }
 
 .more-space-on-sides {
@@ -664,19 +693,28 @@ div.desc {
 /* OUR TEAM */
 
 .team-pic {
-	border-radius: 24px;
+	border-radius: 15px;
 	object-fit: cover;
 	width: 100px;
 	height: 100px;
+	transition: filter 0.3s ease; /* Add a smooth transition effect */
+	transition: border 1.0s ease out;
+}
+
+.team-pic:hover {
+	filter: blur(3px); /* Apply the blur effect on hover */
+	border: 3px solid hsla(0, 0%, 0%, 0);
 }
 
 div.team-gallery {
-  padding: 10px 20px;
+  padding: 10px 10px;
 }
 
+/*
 div.team-gallery:hover {
   border: 3px solid hsla(0, 0%, 0%, 0);
 }
+*/
 
 div.team-gallery img {
   width: 100%;
@@ -686,7 +724,8 @@ div.team-gallery img {
 .responsive-team-pic {
   padding: 0 6px;
   float: left;
-  width: 20%;
+  width: 16.66%; /* CHANGE THIS TO CHANGE NUMBER OF IMAGES PER ROW */
+  /* 100% / 6 pics per row = 16.66% */
 }
 
 @media only screen and (max-width: 700px) {
@@ -698,7 +737,7 @@ div.team-gallery img {
 
 @media only screen and (max-width: 500px) {
   .responsive-team-pic {
-    width: 100%;
+    width: 50%;
   }
 }
 
@@ -713,7 +752,7 @@ div.team-gallery img {
 	font-weight: regular;
 	color: #FAAE58;
 	margin-top: -20px;
-	font-size: 13.5pt;
+	font-size: 15pt;
 	line-height: 26px;
 }
 
@@ -722,12 +761,18 @@ div.team-gallery img {
 }
 
 .big-team-pic {
-	border-radius: 48px;
+	border-radius: 30px;
 	align-content: center;
 	display: flex;
-	width: 71%;
+	width: 61%;
 	margin: auto;
 	padding: 10px 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  .big-team-pic {
+    width: 85%;
+  }
 }
 
 .big-team-pic-section {
@@ -752,6 +797,32 @@ iframe {
 	width: 65%;
 	margin: auto;
 	padding: 10px 10px;
-	border-radius: 18px;
+	border-radius: 0px;
 	margin-bottom: 130px;
 }
+
+
+.blurry-image {
+	transition: filter 0.3s ease; /* Add a smooth transition effect */
+}
+
+.blurry-image:hover {
+	filter: blur(2px); /* Apply the blur effect on hover */
+	border: 3px solid hsla(0, 0%, 0%, 0);
+}
+
+.orange {
+	color: #FAAE58;
+}
+
+.white-hover {
+	color: #FAAE58; /* Orange */
+	transition: color 0.3s ease;
+}
+
+.white-hover:hover {
+	color: white;
+}
+
+
+
