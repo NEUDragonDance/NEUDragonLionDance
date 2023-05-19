@@ -672,6 +672,7 @@ div.desc {
 	height: 260px;
 	padding-bottom: 6px;
 	transition: border 0.3s ease;
+	border: 0px solid hsla(0, 0%, 0%, 0);
 }
 
 .pic:hover {
