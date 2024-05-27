@@ -1,0 +1,904 @@
+/* Everything */
+* {
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	margin: 0;
+	scroll-behavior: smooth;
+}
+
+
+h3 {
+	color: white;
+	font-family: Raleway, Helvetica, Ariel;
+}
+
+/* ----------------------------------------------- */
+
+/* div containing the small top left logo img */
+.small-logo {
+	display: inline-block;
+	padding-top: 20px;
+	padding-left: 25px;
+	float: left;
+}
+
+/* "NORTHEASTERN UNIVERSITY" top left logo text */
+.neu-logo-text {
+	margin-top: 5px;
+	letter-spacing: 0.25rem;
+	font-size: 12.5pt;
+	font-weight: 550;
+	margin-bottom: 10px;
+}
+
+/* "Dragon & Lion Dance Troupe" top left logo text */
+.dd-logo-text {
+	margin-top: -8px;
+	font-size: 17pt;
+	font-weight: bold;
+	letter-spacing: 0.03rem;
+}
+
+.chinese-logo-text {
+	margin-top: -19px;
+	font-size: 21pt;
+	font-weight: bold;
+	letter-spacing: 0.58rem;
+	font-family: KaiTi, "Noto Serif TC", PMingLiu, SimSum, "MS Mincho", Batang;
+	color: #FAAE58; /* Orange */
+}
+
+
+/* div containing just the text element for the small top left logo */
+.logo-top-left-text {
+	margin-top: 45px;
+	padding-left: 25px;
+	display: inline-block;
+	float: left;
+	text-shadow: 1px 1px 4px black;
+}
+
+/* ----------------------------------------------- */
+/* GRADIENTS AND BACKGROUND COLORS */
+
+/* black gradient from top */
+.input-color {
+    position: relative;
+}
+.input-color input {
+}
+.input-color .color-box {
+    width: 100%;
+    height: 175px;
+    display: inline-block;
+    position: absolute;
+    margin-top: -10px;
+    z-index: -1;
+    margin-left: 0px;
+}
+
+/* red gradient (on home page) */
+.red-gradient {
+	width: 100%;
+	height:  200px;
+    display: inline-block;
+    z-index: -1;
+    margin-left: 0px;
+
+}
+
+/* background page color */
+body {
+	background-color: #BE1E2E;
+	min-width: fit-content;
+	/* animation: fadeIn 0.75s ease-in-out; */
+}
+
+/* ----------------------------------------------- */
+
+/* navigation bar */
+.topnav {
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 14px;
+  padding-left: 16px;
+  padding-right: 30px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Raleway, Helvetica, Ariel;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  text-shadow: 0.5px 0.5px 6px black;
+
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  color: #FAAE58;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a:active {
+  color: #FAAE58;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* hide the top left logo text on smaller screens */
+@media screen and (max-width:  673px) {
+	.logo-top-left-text {display: none;}
+}
+
+/* remove the spacing-pic on smaller screens */
+@media screen and (max-width:  673px) {
+	.spacing-pic {display: none;}
+}
+
+/* When the screen is less than 600 pixels wide, hide all links and show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 1300px) {
+  .topnav a:not(:last-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 1207px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: white;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+  font-family: Raleway, Helvetica, Ariel;
+  font-weight: 550;
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #FAAE58;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+/* ----------------------------------------------- */
+
+.main-pic {
+	z-index: -2;
+	height: 1000px;
+	max-width: 100%;
+	position: fixed;
+	top: 0px;
+}
+
+.spacing-pic {
+	z-index: -3;
+	max-width: 100%;
+	height: 443px;
+	background-position: fixed;
+	top: 10px;
+	background-color: hsla(0, 0%, 0%, 0);
+}
+
+h1 {
+	color: white;
+	font-family: Raleway, Helvetica, Ariel;
+	font-weight: bold;
+	letter-spacing: 0.03rem;
+	text-align: center;
+}
+
+.main-section {
+	background-color: #BE1E2E;
+	margin-top: -26px;
+	height: 800px;
+	z-index: 3;
+}
+
+.m-section {
+	background-color: #BE1E2E;
+	margin-top: -26px;
+	height: 800px;
+	z-index: 3;
+}
+
+h2 {
+	text-align: left;
+	color: white;
+	font-family: Raleway, Helvetica, Ariel;
+}
+
+.big-logo-text {
+	text-align: left;
+	padding-left: 50px;
+	padding-top: 50px;
+	z-index: 4;
+	text-shadow: 1px 1px 7px black;
+}
+
+.big-neu-logo-text-mobile {
+	letter-spacing: 0.25rem;
+	font-size: 15.5pt;
+	font-weight: 550;
+	margin-bottom: 10px;
+}
+
+.big-dd-logo-text-mobile {
+	margin-top: -5px;
+	font-size: 20pt;
+	font-weight: bold;
+	letter-spacing: 0.03rem;
+}
+
+.chinese-logo-text-mobile {
+	margin-top: -19px;
+	font-size: 21pt;
+	font-weight: bold;
+	letter-spacing: 0.58rem;
+	font-family: KaiTi;
+	color: #FAAE58;
+}
+
+/* hide big-neu-logo-mobile on bigger screens */
+@media screen and (min-width:  673px) {
+	.big-neu-logo-text-mobile {display: none;}
+	.big-dd-logo-text-mobile {display: none;}
+	.big-chinese-logo-text-mobile {display: none;}
+}
+
+
+.big-neu-logo-text {
+	letter-spacing: 0.21rem;
+	font-size: 20.5pt;
+	font-weight: 550;
+	margin-bottom: -8px;
+	color:#FAAE58;
+}
+
+.big-dd-logo-text {
+	margin-top: 15px;
+	font-size: 50pt;
+	font-weight: bold;
+	letter-spacing: 0.03rem;
+	margin-left: -2px;
+}
+
+/* hide big-neu-logo on smaller screens */
+@media screen and (max-width:  673px) {
+	.big-neu-logo-text {display: none;}
+	.big-dd-logo-text {display: none;}
+}
+
+.midsize-screen-red-background {
+	background-color: #BE1E2E;
+	height: 100px;
+	margin-top: -100px;
+}
+
+/* add a red background on missing areas for mid-sized screens */
+@media screen and (min-width:  1070px) {
+	.midsize-screen-red-background {display: none;}
+}
+
+@media screen and (max-width:  673px) {
+	.midsize-screen-red-background {display: none;}
+}
+
+/* ----------------------------------------------- */
+
+.arrow {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 8%;
+}
+
+.center {
+	position: relative;
+	align-items: center;
+	align-content: center;
+	padding-top: 65px;
+}
+
+.header {
+	text-align: center;
+	padding-top: 80px;
+	margin-bottom: -1px;
+	font-size: calc(50px + 0.390625vw);
+}
+
+/* cange font size of headers for smaller screens */
+@media screen and (max-width:  600px) {
+	.header {font-size: 25pt;}
+}
+
+p {
+	color: white;
+	font-family: Khula, Helvetica, Ariel;
+	font-size: calc(13px + 0.390625vw);
+}
+
+.about-us-text {
+	padding: 20px 5%;
+	line-height: 24px;
+	padding-left: 20px;
+}
+
+.about-us-pic {
+	align-content: center;
+	display: flex;
+	width: 85%;
+	margin: auto;
+	padding: 10px 10px;
+	border-radius: 24px;
+}
+
+.flex-child {
+	flex: 1;
+}
+
+.flex-container {
+	display: flex;
+	background-color: #BE1E2E;
+}
+
+@media screen and (max-width: 825px) {
+    .flex-container { flex-direction: column; }
+}
+
+.button-style {
+	border: 4px solid white;
+	border-radius: 10px;
+	color: white;
+	background-color: #BE1E2E; /* Red */
+	width: 270px;
+	height: 60px;
+	font-size: 20pt;
+	font-weight: 550;
+	font-family: Raleway, Helvetica, Ariel;
+	border-shadow: none;
+	transition: background-color 0.3s ease;
+}
+
+.button-style:hover {
+	background-color: #F9AE59; /* Orange */
+	color: #BE1E2E; /* Red */
+	border: 4px solid #F9AE59; /* Orange */
+	cursor: pointer;
+}
+
+.book-a-show-section {
+	background-color: #BE1E2E;
+	padding-top: 30px;
+	align-content: center;
+	align-items: center;
+}
+
+.book-a-show-text {
+	align-content: center;
+	text-align: center;
+	padding: 10px 22%;
+	line-height: 24px;
+}
+
+.bottom-section {
+	background-color: black;
+	color: white;
+	height: 250px;
+	margin-top: -25px;
+	padding-top: 20px;
+	text-align: center;
+}
+
+.credits {
+	font-size: calc(10px + 0.390625vw);
+	color: lightgray;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.flex-container-2 {
+	display: flex;
+	background-color: black;
+}
+
+@media screen and (max-width: 825px) {
+    .flex-container-2 { flex-direction: column; }
+}
+
+.join-our-team-section {
+	text-align: left;
+	padding-left: 20px;
+	max-width: 460px;
+	line-height: 25px;
+}
+
+.italic-header {
+	text-align: left;
+	padding-left: 20px;
+	font-size: 22pt;
+	font-style: italic;
+	margin-bottom: -2px;
+	line-height: 35px;
+	transition: color 0.3s ease;
+}
+
+.italic-header:hover {
+	color: #FAAE58;
+}
+
+.link-color:hover {
+	color: #FAAE58;
+}
+
+.bottom-section-text {
+	font-size: 14pt;
+	padding-left: 16px;
+}
+
+.email {
+	text-align: right;
+	padding-right: 40px;
+	font-style: italic;
+}
+
+a:visited { 
+	text-decoration: none; 
+}
+
+.icon-div {
+	text-align: right;
+	padding-right: 35px;
+}
+
+.icon {
+	padding-left: 20px;
+	flex-direction: column;
+	opacity: 100%;
+	transition: 0.2s ease;
+}
+
+.icon:hover {
+	opacity: 75%;
+}
+
+.serena-ng {
+	color: lightgray;
+	transition: color 0.3s ease;
+}
+
+.serena-ng:hover {
+	color: #FAAE58;
+}
+
+.link-color {
+	color: white;
+	transition: color 0.3s ease;
+
+}
+
+link-color:visited {
+	text-decoration: none;
+}
+
+.icon-link-color {
+	color: hsla(0, 0%, 0%, 0);
+}
+
+.lightweight-font {
+	font-weight: lighter;
+}
+
+.flex-container-no-background {
+	display: flex;
+}
+
+@media screen and (max-width: 825px) {
+    .flex-container-no-background { flex-direction: column; }
+}
+
+
+.main-section-no-background {
+	margin-top: -26px;
+	height: 800px;
+	z-index: 3;
+}
+
+.yellow-text {
+	color: #FAAE58;
+}
+
+.gallery-section {
+	padding-top: 30px;
+	align-content: center;
+	align-items: center;
+}
+
+.button-style-long {
+	border: 4px solid white;
+	border-radius: 10px;
+	color: white;
+	background-color: #BE1E2E;
+	width: 335px;
+	height: 60px;
+	font-size: 20pt;
+	font-weight: 550;
+	font-family: Raleway, Helvetica, Ariel;
+	transition: background-color 0.3s ease;
+}
+
+.button-style-long:hover {
+	background-color: #F9AE59; /* Orange */
+	color: #BE1E2E; /* Red */
+	border: 4px solid #F9AE59; /* Orange */
+	cursor: pointer;
+}
+
+.gallery-text {
+	align-content: center;
+	text-align: center;
+	padding: 10px 25%;
+	line-height: 24px;
+}
+
+.bottom-credits-section {
+	width: 100%;
+	height: 80px;
+	background-color: black;
+}
+
+/* ----------------------------------------------- */
+/* GALLERY */
+div.gallery {
+  padding: 10px;
+}
+
+/*
+div.gallery:hover {
+  border: 5px solid hsla(0, 0%, 0%, 0);;
+}
+*/
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 3px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: white;
+  font-family: Khula, Helvetica, Ariel;
+  font-size: 13pt;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 33.333%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.pic {
+	border-radius: 13px;
+	object-fit: cover;
+	width: 375px;
+	height: 260px;
+	padding-bottom: 6px;
+	transition: border 0.3s ease;
+	border: 0px solid hsla(0, 0%, 0%, 0);
+}
+
+.pic:hover {
+	filter: blur(2px); /* Apply the blur effect on hover */
+	border: 5px solid hsla(0, 0%, 0%, 0);
+	padding-bottom: 3px;
+}
+
+.more-space-on-sides {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.current-page {
+	color: #FAAE58;
+}
+
+/* ----------------------------------------------- */
+/* OUR TEAM */
+
+.team-pic {
+	border-radius: 13px;
+	object-fit: cover;
+	width: 100px;
+	height: 100px;
+	transition: filter 0.3s ease; /* Add a smooth transition effect */
+	transition: border 1.0s ease out;
+}
+
+.team-pic:hover {
+	filter: blur(3px); /* Apply the blur effect on hover */
+	border: 3px solid hsla(0, 0%, 0%, 0);
+}
+
+div.team-gallery {
+  padding: 10px 10px;
+}
+
+/*
+div.team-gallery:hover {
+  border: 3px solid hsla(0, 0%, 0%, 0);
+}
+*/
+
+div.team-gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.responsive-team-pic {
+  padding: 0 3px;
+  float: left;
+  width: 16.66%; /* CHANGE THIS TO CHANGE NUMBER OF IMAGES PER ROW */
+  /* 100% / 6 pics per row = 16.66% */
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive-team-pic {
+    width: 33.333%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive-team-pic {
+    width: 50%;
+  }
+}
+
+.position {
+	font-weight: bold;
+	color: white;
+	line-height: 24px;
+	margin-top: 5px;
+	margin-bottom: 24px;
+}
+
+.name {
+	font-weight: regular;
+	color: #FAAE58;
+	margin-top: -20px;
+	font-size: 15pt;
+	line-height: 26px;
+}
+
+.orange-text {
+	color: #FAAE58;
+}
+
+.big-team-pic {
+	border-radius: 30px;
+	align-content: center;
+	display: flex;
+	width: 61%;
+	margin: auto;
+	padding: 10px 10px;
+}
+
+.big-full-width-pic {
+	border-radius: 0px;
+	align-content: center;
+	display: flex;
+	width: 100%;
+	margin: auto;
+	padding: 0px;
+}
+
+.past-client-logos {
+	align-content: center;
+	display: flex;
+	width: 90%;
+	margin: auto;
+	padding: 50px;
+}
+
+@media only screen and (max-width: 500px) {
+  .big-team-pic {
+    width: 85%;
+  }
+}
+
+.big-team-pic-section {
+	margin-top: -50px;
+}
+
+.member {
+	font-weight: regular;
+	color: white;
+	line-height: 25px;
+	margin-top: 5px;
+	font-size: 15pt;
+}
+
+.calendar {
+	width: 100%;
+}
+
+iframe {
+	align-content: center;
+	display: flex;
+	width: 65%;
+	margin: auto;
+	padding: 10px 10px;
+	border-radius: 0px;
+	margin-bottom: 130px;
+}
+
+
+.blurry-image {
+	transition: filter 0.3s ease; /* Add a smooth transition effect */
+}
+
+.blurry-image:hover {
+	filter: blur(2px); /* Apply the blur effect on hover */
+	border: 3px solid hsla(0, 0%, 0%, 0);
+}
+
+.orange {
+	color: #FAAE58;
+}
+
+.white-hover {
+	color: #FAAE58; /* Orange */
+	transition: color 0.3s ease;
+}
+
+.white-hover:hover {
+	color: white;
+}
+
+/* ----------------------------------------------- */
+/* Load Transition Animations */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.fade-in {
+	opacity: 0; /* Initial state */
+	transition: opacity 0.25s ease-in-out; 
+}
+
+.fade-in.visible {
+	opacity: 1; /* Fade to this state */
+}
+
+.section {
+	height: 100vh; /* For demonstration, each section takes full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  text-align: center;
+}
+
+@keyframes fadeInGallery {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+/* 2nd fade-in is for the gallery section */
+.fade-in-2 {
+    opacity: 0; /* Initial state */
+    transition: opacity 0.25s ease-in-out; /* Optional: delayed transition */
+}
+
+.fade-in-2.visible {
+    opacity: 1; /* Fade to this state */
+}
