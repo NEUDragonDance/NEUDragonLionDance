@@ -2,7 +2,7 @@
 The official website of the Northeastern University Dragon and Lion Dance Troupe!
 <br>Live at neudragonliondance.org
 <br>Created by Serena Ng
-<br>
+<br><br>
 <strong>Version 3.0 Updates:</strong>
 - Loading animations/transitions
 - Updated the Our Team page for 2024-25
