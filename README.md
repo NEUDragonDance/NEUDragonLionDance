@@ -1,6 +1,6 @@
 # NEUDragonLionDance
 Version 3.0 of the Northeastern University Dragon and Lion Dance Troupe website
-<br>By Serena Ng
+<br><br>Created by Serena Ng
 
 <strong>Version 3.0 Updates:</strong>
 - Loading animations/transitions
