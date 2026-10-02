@@ -27,10 +27,15 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      # Resolves the data-include attributes in the pages into real HTML.
+      # No dependencies -- the runner's bundled python3 is enough.
+      - name: Build site
+        run: python3 build.py
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
   deploy:
     needs: build
