@@ -15,6 +15,7 @@ The official website of the Northeastern University Dragon and Lion Dance Troupe
 ## Project structure
 
 ```
+build.py            Build script: inlines partials, writes _site/ (--serve to preview)
 index.html          Home
 Gallery.html        Performance gallery
 JoinUs.html         Our Team + Join Us
@@ -23,37 +24,60 @@ partials/
   footer.html       Join prompt, social links, credits (shared by all 3 pages)
 assets/
   css/styles.css
-  js/includes.js    Injects the partials, wires up the overlay menu
+  js/nav.js         Overlay menu open/close
   js/main.js        Scroll fade-in animations
   img/brand/        Logos, icons, client logos
   img/gallery/      Performance photos, by year
   img/members/      Team photos, by year
 ```
 
-The header and footer live in `partials/` and are pulled into each page at
-runtime by `assets/js/includes.js`, which fills any element carrying a
-`data-include="<path>"` attribute. Edit those two files once rather than
-changing the same markup in three pages.
+The header and footer live in `partials/` and are inlined into each page at
+build time by `build.py`, which replaces any element carrying a
+`data-include="<path>"` attribute with that file's contents. Edit those two
+files once rather than changing the same markup in three pages.
 
 Each page sets `<body data-page="...">` (`home`, `gallery` or `team`). The
-include script uses that to add the `current-page` class to the matching nav
-link, which is what highlights the current page in orange.
+build uses that to add the `current-page` class to the matching nav link,
+which is what highlights the current page in orange.
+
+Because this happens at build time, the nav ships as real HTML -- no
+JavaScript is needed to render it. `assets/js/nav.js` only handles opening
+and closing the overlay menu on narrow screens.
 
 ## Running it locally
 
-`fetch()` is blocked on `file://` URLs, so opening a page by double-clicking it
-shows the page without its header and footer. Serve the folder over HTTP
-instead:
+The header and footer live in `partials/` and are stamped into each page by
+`build.py`, so you need to build before you preview. Serving the repository
+root directly will show pages with no nav and no footer.
 
 ```sh
-python3 -m http.server
+python3 build.py --serve
 ```
 
-Then open <http://localhost:8000/>.
+That builds, serves <http://localhost:8000/>, and watches `*.html`,
+`partials/` and `assets/` — editing any of them rebuilds automatically, so you
+just refresh the browser. Ctrl-C stops it. Add a port number to change it:
+`python3 build.py --serve 9000`.
+
+Other modes:
+
+| Command | What it does |
+| --- | --- |
+| `python3 build.py` | Build once into `_site/` |
+| `python3 build.py --watch` | Rebuild on change, no server |
+| `python3 build.py --serve` | Build, serve and watch (what you usually want) |
+
+It needs nothing beyond Python 3 — no npm, no bundler, no file-watcher package.
+Rebuilds are incremental: assets are synced rather than re-copied, so only the
+first build touches the image directories.
+
+`_site/` is generated output and is gitignored; never edit it by hand.
 
 ## Deployment
 
-Pushing to `main` triggers `.github/workflows/deploy-pages.yml`, which uploads
-the repository root and deploys it to GitHub Pages. The Pages source is set to
-"GitHub Actions" in the repository settings, and the custom domain
-(neudragonliondance.org) is configured there as well.
+Pushing to `main` triggers `.github/workflows/deploy-pages.yml`, which runs
+`python3 build.py` and deploys the resulting `_site/` to GitHub Pages. The
+build needs no dependencies beyond the runner's bundled Python.
+
+The Pages source is set to "GitHub Actions" in the repository settings, and the
+custom domain (neudragonliondance.org) is configured there as well.
