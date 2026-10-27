@@ -436,7 +436,7 @@ p {
 }
 
 .about-us-text {
-	padding: 20px 5%;
+	padding: 38px 5%;
 	line-height: 24px;
 	padding-left: 20px;
 }
@@ -797,8 +797,9 @@ div.desc {
 .pic {
 	border-radius: 13px;
 	object-fit: cover;
-	width: 375px;
-	height: 260px;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 3 / 2;
 	padding-bottom: 6px;
 	transition: border 0.3s ease;
 	border: 0px solid hsla(0, 0%, 0%, 0);
